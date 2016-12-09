@@ -1,0 +1,8 @@
+bravado
+bravado_core
+jsonschema
+pyramid
+pytest
+PyYAML
+webtest
+wsgiref

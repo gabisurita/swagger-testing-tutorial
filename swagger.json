@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Hello API"
+    },
+    "host": "0.0.0.0:8080",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "tags": [
+        {
+            "name": "hello"
+        }
+    ],
+    "paths": {
+        "/hello/{name}": {
+            "get": {
+                "operationId": "get_hello",
+                "tags": [
+                    "hello"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/path-name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/responses/hello-get-200"
+                    }
+                }
+            }
+        }
+    },
+    "parameters": {
+        "path-name": {
+            "name": "name",
+            "in": "path",
+            "description": "Your name.",
+            "required": true,
+            "type": "string"
+        }
+    },
+    "responses": {
+        "hello-get-200": {
+            "description": "Hello message.",
+            "schema": {
+                "$ref": "#/definitions/Hello-object"
+            }
+        }
+    },
+    "definitions": {
+        "Hello-object": {
+            "type": "object",
+            "properties": {
+                "hello": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "hello"
+            ]
+        }
+    }
+}
